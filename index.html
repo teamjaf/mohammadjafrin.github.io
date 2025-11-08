@@ -7,6 +7,26 @@
       name="description"
       content="Personal site for Mohammad Jafrin – software engineer, full-stack developer, and lifelong learner."
     />
+    <meta name="author" content="Mohammad Jafrin" />
+    <meta name="keywords" content="Mohammad Jafrin, software engineer, full-stack developer, TypeScript, React, Node.js, Python" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mohammadjafrin.github.io/" />
+    <meta property="og:title" content="Mohammad Jafrin | Software Engineer" />
+    <meta property="og:description" content="Software engineer, full-stack developer, and lifelong learner. Building resilient, user-focused software products." />
+    <meta property="og:site_name" content="Mohammad Jafrin" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mohammadjafrin.github.io/" />
+    <meta name="twitter:title" content="Mohammad Jafrin | Software Engineer" />
+    <meta name="twitter:description" content="Software engineer, full-stack developer, and lifelong learner. Building resilient, user-focused software products." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>" />
+    
     <title>Mohammad Jafrin | Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -243,7 +263,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <header role="banner">
       <p class="tagline">Software Engineer · Builder · Mentor</p>
       <h1>Mohammad Jafrin</h1>
       <p>
@@ -261,9 +281,9 @@
       </div>
     </header>
 
-    <main class="container">
-      <section id="about">
-        <h2>What I'm focused on</h2>
+    <main class="container" role="main">
+      <section id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">What I'm focused on</h2>
         <div class="about-grid">
           <div>
             <h3>Product-minded development</h3>
@@ -289,8 +309,8 @@
         </div>
       </section>
 
-      <section id="skills">
-        <h2>Core skills</h2>
+      <section id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Core skills</h2>
         <ul class="list-inline">
           <li>TypeScript &amp; JavaScript</li>
           <li>React &amp; Next.js</li>
@@ -303,8 +323,8 @@
         </ul>
       </section>
 
-      <section id="projects">
-        <h2>Selected work</h2>
+      <section id="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected work</h2>
         <div class="projects">
           <article class="project-card">
             <h3>Insightful Analytics</h3>
@@ -325,8 +345,8 @@
         </div>
       </section>
 
-      <section id="contact">
-        <h2>Let's build together</h2>
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Let's build together</h2>
         <p>
           If you have an opportunity that could use a curious builder with a product mindset, let's chat. I'm always open
           to collaborating on meaningful problems.
@@ -337,8 +357,8 @@
       </section>
     </main>
 
-    <footer>
-      &copy; <span id="year"></span> Mohammad Jafrin. Built with care and deployed on GitHub Pages.
+    <footer role="contentinfo">
+      <p>&copy; <span id="year"></span> Mohammad Jafrin. Built with care and deployed on GitHub Pages.</p>
     </footer>
 
     <script>
