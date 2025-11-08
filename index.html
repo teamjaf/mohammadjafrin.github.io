@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal site for Mohammad Jafrin – software engineer, full-stack developer, and lifelong learner."
+    />
+    <title>Mohammad Jafrin | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg-light: #f7f9fc;
+        --bg-dark: #0b1120;
+        --card-light: #ffffff;
+        --card-dark: rgba(15, 23, 42, 0.7);
+        --border-light: rgba(15, 23, 42, 0.08);
+        --border-dark: rgba(148, 163, 184, 0.25);
+        --text-light: #0f172a;
+        --text-dark: #e2e8f0;
+        --accent: #2563eb;
+        --accent-muted: rgba(37, 99, 235, 0.12);
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text-light);
+        background: linear-gradient(160deg, var(--bg-light), var(--bg-dark));
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: var(--text-dark);
+        }
+      }
+
+      header {
+        padding: 3.5rem 1.5rem 2.5rem;
+        text-align: center;
+      }
+
+      .container {
+        width: min(960px, 100%);
+        margin: 0 auto;
+        padding: 0 1.5rem 4rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 6vw, 3.8rem);
+        letter-spacing: -0.04em;
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        line-height: 1.7;
+        font-size: 1.05rem;
+        margin: 0 0 1.25rem;
+      }
+
+      .tagline {
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        color: rgba(15, 23, 42, 0.65);
+        margin-bottom: 1.5rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .tagline {
+          color: rgba(226, 232, 240, 0.7);
+        }
+      }
+
+      .cta-group {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.4rem;
+        border-radius: 999px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+      }
+
+      .btn-secondary {
+        border: 1px solid rgba(37, 99, 235, 0.35);
+        color: inherit;
+        background: var(--accent-muted);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      main {
+        margin-top: -1rem;
+      }
+
+      section {
+        background: var(--card-light);
+        margin-bottom: 2rem;
+        padding: clamp(1.75rem, 4vw, 2.5rem);
+        border-radius: 24px;
+        box-shadow: 0 30px 70px rgba(15, 23, 42, 0.15);
+        border: 1px solid var(--border-light);
+        backdrop-filter: blur(14px);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        section {
+          background: var(--card-dark);
+          border: 1px solid var(--border-dark);
+          box-shadow: 0 25px 60px rgba(2, 6, 23, 0.55);
+        }
+      }
+
+      .about-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .about-grid div {
+        background: rgba(148, 163, 184, 0.12);
+        padding: 1.25rem 1.5rem;
+        border-radius: 18px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .about-grid div {
+          background: rgba(15, 23, 42, 0.55);
+        }
+      }
+
+      .about-grid h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .list-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .list-inline li {
+        padding: 0.5rem 0.9rem;
+        border-radius: 12px;
+        background: rgba(37, 99, 235, 0.12);
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .list-inline li {
+          background: rgba(37, 99, 235, 0.22);
+        }
+      }
+
+      .projects {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .project-card {
+        display: grid;
+        gap: 0.65rem;
+      }
+
+      .project-card a {
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        color: rgba(15, 23, 42, 0.6);
+        font-size: 0.95rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        footer {
+          color: rgba(226, 232, 240, 0.65);
+        }
+      }
+
+      @media (min-width: 720px) {
+        .about-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .projects {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="tagline">Software Engineer · Builder · Mentor</p>
+      <h1>Mohammad Jafrin</h1>
+      <p>
+        I design and build resilient, user-focused software products. I enjoy pairing disciplined engineering with a
+        curiosity for emerging technology to deliver thoughtful digital experiences.
+      </p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="mailto:mohammadjafrin@gmail.com">Email Me</a>
+        <a class="btn btn-secondary" href="https://github.com/mohammadjafrin" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/mohammadjafrin" target="_blank" rel="noopener"
+          >LinkedIn</a
+        >
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="about">
+        <h2>What I'm focused on</h2>
+        <div class="about-grid">
+          <div>
+            <h3>Product-minded development</h3>
+            <p>
+              I love collaborating across design and product to ship features that solve real customer problems while
+              staying technically sound.
+            </p>
+          </div>
+          <div>
+            <h3>Full-stack craftsmanship</h3>
+            <p>
+              From intuitive UI work to dependable backend services, I lean on TypeScript, React, Node.js, and Python to
+              build balanced systems.
+            </p>
+          </div>
+          <div>
+            <h3>Continuous learning</h3>
+            <p>
+              Sharing knowledge, mentoring teammates, and writing about what I discover keeps me grounded and growing as
+              an engineer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Core skills</h2>
+        <ul class="list-inline">
+          <li>TypeScript &amp; JavaScript</li>
+          <li>React &amp; Next.js</li>
+          <li>Node.js &amp; Express</li>
+          <li>Python</li>
+          <li>REST &amp; GraphQL APIs</li>
+          <li>PostgreSQL</li>
+          <li>AWS &amp; CI/CD</li>
+          <li>Testing &amp; Automation</li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Selected work</h2>
+        <div class="projects">
+          <article class="project-card">
+            <h3>Insightful Analytics</h3>
+            <p>
+              Built a modular data visualization suite that helped product managers monitor feature adoption, cutting
+              analysis time in half.
+            </p>
+            <a href="https://github.com/mohammadjafrin" target="_blank" rel="noopener">View case study</a>
+          </article>
+          <article class="project-card">
+            <h3>Community Learning Hub</h3>
+            <p>
+              Designed a collaborative learning platform where mentors can host sessions and share resources for early
+              career developers.
+            </p>
+            <a href="https://github.com/mohammadjafrin" target="_blank" rel="noopener">Explore the project</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Let's build together</h2>
+        <p>
+          If you have an opportunity that could use a curious builder with a product mindset, let's chat. I'm always open
+          to collaborating on meaningful problems.
+        </p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="mailto:mohammadjafrin@gmail.com">Start a conversation</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Mohammad Jafrin. Built with care and deployed on GitHub Pages.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
