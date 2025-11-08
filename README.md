@@ -18,9 +18,9 @@ software engineer, highlights areas of focus, and shares ways to connect.
 .
 ├── index.html          # Main landing page
 ├── 404.html           # Custom 404 error page
+├── _config.yml        # Jekyll configuration
 ├── robots.txt         # Search engine crawler instructions
 ├── sitemap.xml        # Site map for search engines
-├── .nojekyll          # Disable Jekyll processing
 └── README.md          # This file
 ```
 
@@ -71,6 +71,27 @@ This site is automatically deployed to GitHub Pages when you push to the `main` 
 
 4. **Access**: Your site will be live at [https://mohammadjafrin.github.io](https://mohammadjafrin.github.io) within a few minutes.
 
+### Troubleshooting 404 Errors
+
+If you're seeing a 404 error after deployment:
+
+1. **Check GitHub Pages Settings**:
+   - Go to **Settings** → **Pages**
+   - Ensure **Source** is set to **Deploy from a branch**
+   - Select **main** (or **master**) branch
+   - Select **/ (root)** folder
+   - Click **Save**
+
+2. **Wait for Build**: GitHub Pages can take 1-10 minutes to build and deploy. Check the **Actions** tab to see if the build is in progress.
+
+3. **Check Repository Name**: For user/organization pages, the repository must be named exactly `username.github.io` (case-sensitive).
+
+4. **Clear Cache**: Try accessing your site in an incognito/private window or clear your browser cache.
+
+5. **Check Build Logs**: Go to **Settings** → **Pages** → **Build and deployment** to see if there are any build errors.
+
+6. **Verify Files**: Ensure `index.html` is in the root directory of your repository.
+
 ### Custom Domain (Optional)
 
 To use a custom domain:
@@ -80,10 +101,11 @@ To use a custom domain:
 
 ## 📝 Notes
 
-- The `.nojekyll` file ensures GitHub Pages serves the site as static files without Jekyll processing
+- The `_config.yml` file configures Jekyll for GitHub Pages (though the site uses static HTML)
 - The site uses system fonts with Google Fonts as a fallback for better performance
 - All external links include `rel="noopener"` for security
 - The site is fully static and requires no build process
+- Jekyll front matter (`---`) is included in HTML files to ensure proper processing by GitHub Pages
 
 ## 📄 License
 

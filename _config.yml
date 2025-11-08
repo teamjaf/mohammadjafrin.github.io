@@ -1,0 +1,40 @@
+# Site Settings
+title: "Mohammad Jafrin | Software Engineer"
+description: "Software engineer, full-stack developer, and lifelong learner. Building resilient, user-focused software products."
+url: "https://mohammadjafrin.github.io"
+baseurl: "" # Leave empty if using username.github.io
+
+# Author
+author:
+  name: "Mohammad Jafrin"
+  email: "mohammadjafrin@gmail.com"
+  github: "mohammadjafrin"
+  linkedin: "mohammadjafrin"
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+theme: null # No theme - using custom HTML
+plugins: [] # No plugins needed for static HTML
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include files (if needed)
+# include: []
+
+# Permalinks
+permalink: pretty
+
+# Encoding
+encoding: utf-8
+
+# Safe mode (for GitHub Pages)
+safe: true
+
